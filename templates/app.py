@@ -25,6 +25,7 @@ def csv_import():
 
     # Trap errors for copying the array to our database
     try:
+        # Is this really needed??  Found verbage online about this.  If we are using the admin.
         db_cursor.copy_from(contents, "tbl_users", columns=('t_name_user', 't_email'), sep=",")
     except psycopg2.Error as e:
         message = "Database error: " + e + "/n copy_from"
