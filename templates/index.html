@@ -14,36 +14,29 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>Belly Button Biodiversity Dashboard</h1>
-        <h3>Use the interactive charts below to explore the dataset</h3>
+        <h1>Neurological Disorders Dashboard</h1>
+        <h3>Use the interactive charts below to explore the datasets</h3>
         <br>
         <br>
-        <p>In January 2011, North Carolina State University (NCSU) launched 
-          a Belly Button Biodiversity study to investigate the microbes 
-          inhabiting the human belly button.  Their study (Latimer et al.) 
-          revealed that the belly button has a lot of diverse microbials that 
-          inhabit this environment.  Of the 60 navels samples, 2,300 species were 
-          identifie.  Eight of those were identified as being frequent.  
-          This data is visualized below focusing on the top 10 microbials 
-          per sample.</p>
+        <p>The prevalence of neurological disorders has expanded over the 
+          years, including diagnoses such as Autism, Attention Deficit and 
+          Hyperactivity Disorder(ADHD), intellectional disability, and 
+          Asperger's Syndrom.  Not only can this have a debilitating effect 
+          on the individual, but this also affects the family members who are 
+          often providing the supports that are needed.  The purpose of this 
+          website is to use datasets available from Our World in Data that 
+          is available on Neurological Disorder statistics across the globe.  
+          The project entailed cleaning data from the website that had a 
+          number of quality issues and pair it down to these four disorders 
+          listed below. The graphs use Chart.js and the site uses a Flask App 
+          on the backend.  For more information on the code and data, please 
+          visit the GitHub repository below.</p>
           <br>
           <br>
-          <a href="https://github.com/nladkins/interactive-web-visualizations">GitHub Repository</a>
+          <a href="https://github.com/nladkins/project-3-neurological-disorders">GitHub Repository</a>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3 col-sm-3">
-        <div class="well">
-          <h5>Test Subject ID No.:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Demographic Info</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body"></div>
-        </div>
-      </div>
       <div class="col-md-9 col-sm-6">
         <div id="bar"></div>
       </div>
@@ -59,9 +52,7 @@
   </div>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./static/js/app.js"></script>
-  <!-- <script src="./static/js/bonus.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   
 </body>
 
