@@ -50,19 +50,19 @@ def disorders():
 
     """Return a list of passenger data including the name, age, and sex of each passenger"""
     # Query all passengers
-    results = session.query(disorders.Entity, disorders.Code, disorders.Year, disorders.Prevelance_in_Males, disorders.Prevelance_in_Females, disorders.Population. disorders.Continent).all()
+    results = session.query(disorders.Entity, disorders.Code, disorders.Year, disorders.Prevalence_in_Males, disorders.Prevalence_in_Females, disorders.Population. disorders.Continent).all()
 
     session.close()
 
     # Create a dictionary from the row data and append to a list of all_passengers
     all_disorders = []
-    for entity, code, year, prevelance_in_males, prevelance_in_females, population, continent in results:
+    for entity, code, year, prevalence_in_males, prevalence_in_females, population, continent in results:
         disorder_dict = {}
         disorder_dict["Entity"] = entity
         disorder_dict["Code"] = code
         disorder_dict["Year"] = year
-        disorder_dict["Prevelance_in_Males"] = prevelance_in_males
-        disorder_dict["Prevelance_in_Females"] = prevelance_in_females
+        disorder_dict["Prevalence_in_Males"] = prevalence_in_males
+        disorder_dict["Prevalence_in_Females"] = prevalence_in_females
         disorder_dict["Population"] = population
         disorder_dict["Continent"] = continent
         all_disorders.append(disorder_dict)
