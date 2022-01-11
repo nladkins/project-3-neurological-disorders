@@ -1,0 +1,92 @@
+.nav {
+  background: lightgray
+}
+
+.head {
+  background: lightgray;
+}
+
+.container {
+  background: gray;
+  background-color: lightgray;
+}
+
+.body {
+  background: lightgray;
+  background-color: lightgray;
+}
+
+.box {
+  height: 400px;
+  padding: 20px;
+  color: #fff;
+}
+
+.image {
+  width: 800px;
+  height: 300px;
+  margin: 0px 0px;
+  image-orientation: unset
+}
+
+h2 {
+  color: navy;
+  text-indent: 30px;
+  word-wrap: unset;
+}
+
+h6 {
+  text-indent: 2px;
+  color: navy;
+}
+
+p {
+  text-indent: 3px;
+}
+
+h5 {
+  margin: 35px;
+  color: navy;
+}
+
+p {
+  color: navy;
+  text-indent: 30px;
+  text-transform: uppercase;
+}
+
+em {
+  align-content:stretch;
+  color: whitesmoke;
+}
+
+article {
+  color: lightgray
+}
+
+img {
+width: 250px;
+height: 175px;
+box-align: left;
+margin: 0px 0px;
+image-orientation: unset;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.lightslategray {
+  background: lightslategrey;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px black solid;
+  font: 12px sans-serif;
+}
+
+td {
+  border: 1px black solid;
+  padding: 5px;
+}
