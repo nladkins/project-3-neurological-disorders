@@ -43,7 +43,7 @@ def welcome():
     """Connecting."""
     return (
         f"Available Routes:<br/>"
-        f"neuro_disorder_db/disorders<br/>"
+        f"/disorders<br/>"
     )
 
 # Second Route is all of the data.
