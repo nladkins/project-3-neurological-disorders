@@ -26,7 +26,10 @@ disorder = Base.classes.disorders
 #################################################
 # Flask Setup
 #################################################
-app = Flask(__name__)
+app = flask.Flask(__name__, static_url_path='',
+            static_folder='static',
+            template_folder='template')
+app.config["DEBUG"] = True
 
 
 #################################################
@@ -34,7 +37,7 @@ app = Flask(__name__)
 #################################################
 
 
-@app.route("/")
+@app.route("/index")
 def welcome():
     """Connecting."""
     return (
