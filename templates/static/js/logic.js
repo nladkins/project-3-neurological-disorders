@@ -1,5 +1,5 @@
 // Store our API endpoint as queryUrl.
-var queryUrl = "";
+var queryUrl = "http://127.0.0.1:5000/disorders";
 
 // Perform a GET request to the query URL
 d3.json(queryUrl).then(console.log)
