@@ -78,7 +78,7 @@ def disorders1():
     return jsonify(all_disorders)
 
 #################################################
-# Run the App
+# Run the App 
 #################################################
 if __name__ == '__main__':
     app.run(debug=True)
