@@ -9,7 +9,6 @@ from flask import Flask, jsonify
 from flask import render_template
 from secret import password
 
-
 #################################################
 # Database Setup
 #################################################
@@ -33,6 +32,7 @@ disorders = Base.classes.disorders
 
 app = Flask(__name__)
 
+
 #################################################
 # Flask Routes
 #################################################
@@ -42,6 +42,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+
 # Second Route is all of the data.
 @app.route("/json")
 def disorders1():
@@ -49,7 +50,8 @@ def disorders1():
     session = Session(engine)
 
     # Query all disorders
-    results = session.query(disorders.diagnosis, disorders.entity, disorders.code, disorders.year, disorders.prevalence_in_males, disorders.prevalence_in_females, disorders.population, disorders.continent).all()
+    results = session.query(disorders.diagnosis, disorders.entity, disorders.code, disorders.year,
+                            disorders.prevalence_in_males, disorders.prevalence_in_females, disorders.population).all()
 
     # Close the Session
     session.close()
@@ -58,7 +60,7 @@ def disorders1():
     all_disorders = []
 
     # Loop through to create the results into a dictionary which will go into a list.
-    for diagnosis, entity, code, year, prevalence_in_males, prevalence_in_females, population, continent in results:
+    for diagnosis, entity, code, year, prevalence_in_males, prevalence_in_females, population in results:
         disorder_dict = {}
         disorder_dict["diagnosis"] = diagnosis
         disorder_dict["entity"] = entity
@@ -67,11 +69,11 @@ def disorders1():
         disorder_dict["prevalence_in_males"] = prevalence_in_males
         disorder_dict["prevalence_in_females"] = prevalence_in_females
         disorder_dict["population"] = population
-        disorder_dict["continent"] = continent
         all_disorders.append(disorder_dict)
 
     # Return the JSON results.
     return jsonify(all_disorders)
+
 
 #################################################
 # Run the App 

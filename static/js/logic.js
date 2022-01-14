@@ -9,15 +9,18 @@ d3.json(url).then(function(data) {
 
     console.log(adhdData)
     var ctx = adhdChart.getContext('2d');
-    var xValues = adhdData.year;
-    var yValues = adhdData.prevalence_in_females;
-
+    var xValues = adhdData.map(function(data) {
+        return data.year
+    });
+    var yValues = adhdData.map(function(data) {
+        return data.prevalence_in_females
+    });
     new Chart(ctx, {
       type: "bar",
       data: {
-        labels: ['one', 'two', 'three'],
+        labels: xValues,
         datasets: [{
-          data: [5, 6, 7]
+          data: yValues
         }]
       },
       options: {
