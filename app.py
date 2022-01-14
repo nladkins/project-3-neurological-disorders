@@ -47,7 +47,7 @@ def welcome():
     )
 
 # Second Route is all of the data.
-@app.route("/disorders")
+@app.route("/json")
 def disorders1():
     # Create our session (link) from Python to the DB
     session = Session(engine)
