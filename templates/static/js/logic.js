@@ -1,4 +1,4 @@
-// Code goes here
+
 
 var $element = document.getElementById("myChart"),
     $btn = document.getElementById("showYear");

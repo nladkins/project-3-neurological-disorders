@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, text
 
 from flask import Flask, jsonify
+from flask import render_template
 from secret import password
 
 
@@ -31,7 +32,7 @@ disorders = Base.classes.disorders
 #################################################
 app = Flask(__name__, static_url_path='',
     static_folder='static',
-    template_folder='template')
+    template_folder='templates')
 
 #################################################
 # Flask Routes
@@ -39,12 +40,9 @@ app = Flask(__name__, static_url_path='',
 
 # First Route is the welcome screen
 @app.route("/")
-def welcome():
-    """Connecting."""
-    return (
-        f"Available Routes:<br/>"
-        f"neuro_disorder_db/disorders<br/>"
-    )
+def index():
+    disorder_list = disorders1()
+    return render_template("index.html", list=disorder_list)
 
 # Second Route is all of the data.
 @app.route("/json")
