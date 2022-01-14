@@ -30,9 +30,8 @@ disorders = Base.classes.disorders
 #################################################
 # Flask Setup
 #################################################
-app = Flask(__name__, static_url_path='',
-    static_folder='static',
-    template_folder='templates')
+
+app = Flask(__name__)
 
 #################################################
 # Flask Routes
@@ -41,8 +40,7 @@ app = Flask(__name__, static_url_path='',
 # First Route is the welcome screen
 @app.route("/")
 def index():
-    disorder_list = disorders1()
-    return render_template("index.html", list=disorder_list)
+    return render_template("index.html")
 
 # Second Route is all of the data.
 @app.route("/json")
