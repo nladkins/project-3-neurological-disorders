@@ -10,7 +10,37 @@
 </head>
 
 <body>
-
+<!--NAVIGATOR-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Neuro Disorders Dashboard</a>
+    <button class="navbar-toggler" type="button" 
+    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+    aria-controls="navbarSupportedContent" aria-expanded="false" 
+    aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu" aria-labeledby="navbarDropdown">
+            <li><a class="dropdown-item" href="autism.html">Autism</a></li>
+            <li><a class="dropdown-item" href="adhd.html">ADHD</a></li>
+            <li><a class="dropdown-item" href="aspergers.html">Aspergers</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
@@ -20,8 +50,8 @@
         <br>
         <p>The prevalence of neurological disorders has expanded over the 
           years, including diagnoses such as Autism, Attention Deficit and 
-          Hyperactivity Disorder(ADHD), intellectional disability, and 
-          Asperger's Syndrom.  Not only can this have a debilitating effect 
+          Hyperactivity Disorder(ADHD), intellectual disability, and 
+          Asperger's Syndrome.  Not only can this have a debilitating effect 
           on the individual, but this also affects the family members who are 
           often providing the supports that are needed.  The purpose of this 
           website is to use datasets available from Our World in Data that 
@@ -49,55 +79,17 @@
     <div class="row">
       <div class="col-md-12 col-sm-9">
         <center>
-          <h1>Autism Prevalence</h1>
-        </center>
-        <center>
-          <canvas id="autismChart" width="400" height="400"></canvas>
-        </center>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-9">
-        <center>
-          <h1>ADHD Prevalence</h1>
-        </center>
-        <center>
-          <canvas id="adhdChart" width="400" height="400"></canvas>
-          <script>
-          </script>
-        </center>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-9">
-        <center>
           <h1>Intellectual Disability Prevalence</h1>
         </center>
         <center>
           <canvas id="iddChart" width="400" height="400"></canvas>
-          <script>
-
-          </script>
-        </center>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-9">
-        <center>
-          <h1>Aspergers Prevalence</h1>
-        </center>
-        <center>
-          <canvas id="aspergersChart" width="400" height="400"></canvas>
-          <script>
-          </script>
         </center>
       </div>
     </div>
   </div>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-  <script type="text/javascript" src="static/js/logic.js"></script>
+  <script type="text/javascript" src="static/js/idd.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
 </body>

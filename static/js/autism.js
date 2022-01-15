@@ -1,49 +1,5 @@
 url = "/json"
  
-function filtering(country) {
-  d3.json(url).then(function(data) {
-
-    // function selectCountry(row) {
-    //   return row.entity == country;
-    // }
-
-    function selectAspergers(row) {
-        return ((row.diagnosis == 'Asperger') && (row.entity == country));
-    }
-    let aspergersData = data.filter(selectAspergers)
-
-    console.log(aspergersData)
-
-    var ctx = aspergerChart.getContext('2d');
-    
-    var xValues = aspergersData.map(function(data) {
-        return data.year
-    });
-    var yValues = aspergersData.map(function(data) {
-        return data.prevalence_in_females
-    });
-    console.log(xValues)
-    console.log(yValues)
-    
-    if (window.myAspergersChart) window.myAspergersChart.destroy();
-    
-    // Example from the docs
-    window.myAspergersChart = new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: xValues,
-        datasets: [{
-          data: yValues
-        }]
-      }, 
-      options: {
-        legend: {display: false},
-      },
-      
-    });
-  
-  });
-};
 
 function filtering(country) {
   d3.json(url).then(function(data) {
@@ -52,28 +8,28 @@ function filtering(country) {
     //   return row.entity == country;
     // }
 
-    function selectADHD(row) {
-        return ((row.diagnosis == 'ADHD') && (row.entity == country));
+    function selectAutism(row) {
+        return ((row.diagnosis == 'Autism') && (row.entity == country));
     }
-    let adhdData = data.filter(selectADHD)
+    let autismData = data.filter(selectAutism)
 
-    console.log(adhdData)
+    console.log(autismData)
 
-    var ctx = adhdChart.getContext('2d');
+    var ctx = autismChart.getContext('2d');
     
-    var xValues = adhdData.map(function(data) {
+    var xValues = autismData.map(function(data) {
         return data.year
     });
-    var yValues = adhdData.map(function(data) {
+    var yValues = autismData.map(function(data) {
         return data.prevalence_in_females
     });
     console.log(xValues)
     console.log(yValues)
     
-    if (window.myADHDChart) window.myADHDChart.destroy();
+    if (window.myAutismChart) window.myAutismChart.destroy();
     
     // Example from the docs
-    window.myADHDChart = new Chart(ctx, {
+    window.myAutismChart = new Chart(ctx, {
       type: "bar",
       data: {
         labels: xValues,
