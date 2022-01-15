@@ -1,6 +1,6 @@
 url = "/json"
  
-function filtering(country1) {
+function filtering(country) {
   d3.json(url).then(function(data) {
 
     // function selectCountry(row) {
@@ -14,7 +14,7 @@ function filtering(country1) {
 
     console.log(aspergersData)
 
-    var ctx = aspergersChart.getContext('2d');
+    var ctx = aspergerChart.getContext('2d');
     
     var xValues = aspergersData.map(function(data) {
         return data.year
@@ -93,11 +93,6 @@ function filtering(country) {
 // Need a function to identify the event that changed
 function optionChanged(country) {
   filtering(country);
-}
-
-// Need a function to identify the event that changed
-function optionChanged(country1) {
-  filtering(country1);
 }
 
 function init() {
