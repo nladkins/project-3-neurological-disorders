@@ -23,6 +23,9 @@ function filtering(country) {
     var yValues = aspergerData.map(function(data) {
         return data.prevalence_in_females
     });
+    var zValues = aspergerData.map(function(data) {
+        return data.prevalence_in_males
+    });
     console.log(xValues)
     console.log(yValues)
     
@@ -34,9 +37,16 @@ function filtering(country) {
       data: {
         labels: xValues,
         datasets: [{
-          data: yValues
-        }]
-      }, 
+          label: 'Female Prevalence',
+          data: yValues, 
+          backgroundColor: ["red"]
+          },
+          {
+            label: 'Male Prevalence',
+            data: zValues, 
+            backgroundColor: ["blue"]          
+          }
+      ]}, 
       options: {
         legend: {display: false},
       },
