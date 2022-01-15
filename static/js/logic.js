@@ -1,5 +1,50 @@
 url = "/json"
  
+function filtering(country1) {
+  d3.json(url).then(function(data) {
+
+    // function selectCountry(row) {
+    //   return row.entity == country;
+    // }
+
+    function selectAspergers(row) {
+        return ((row.diagnosis == 'Asperger') && (row.entity == country));
+    }
+    let aspergersData = data.filter(selectAspergers)
+
+    console.log(aspergersData)
+
+    var ctx = aspergersChart.getContext('2d');
+    
+    var xValues = aspergersData.map(function(data) {
+        return data.year
+    });
+    var yValues = aspergersData.map(function(data) {
+        return data.prevalence_in_females
+    });
+    console.log(xValues)
+    console.log(yValues)
+    
+    if (window.myAspergersChart) window.myAspergersChart.destroy();
+    
+    // Example from the docs
+    window.myAspergersChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          data: yValues
+        }]
+      }, 
+      options: {
+        legend: {display: false},
+      },
+      
+    });
+  
+  });
+};
+
 function filtering(country) {
   d3.json(url).then(function(data) {
 
@@ -24,9 +69,11 @@ function filtering(country) {
     });
     console.log(xValues)
     console.log(yValues)
-
+    
+    if (window.myADHDChart) window.myADHDChart.destroy();
+    
     // Example from the docs
-    var myBarChart = new Chart(ctx, {
+    window.myADHDChart = new Chart(ctx, {
       type: "bar",
       data: {
         labels: xValues,
@@ -37,6 +84,7 @@ function filtering(country) {
       options: {
         legend: {display: false},
       },
+      
     });
   
   });
@@ -47,10 +95,15 @@ function optionChanged(country) {
   filtering(country);
 }
 
+// Need a function to identify the event that changed
+function optionChanged(country1) {
+  filtering(country1);
+}
+
 function init() {
   // select the drop down portion of the html document
   var dropdown = d3.select("#selDataset");
-
+  
 // read the json data again pulling in the names for the drop down menu items
   d3.json(url).then((data)=> {
     console.log(data)
