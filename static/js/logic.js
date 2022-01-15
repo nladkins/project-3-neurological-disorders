@@ -1,5 +1,5 @@
 url = "/json"
-
+ 
 function filtering(country) {
   d3.json(url).then(function(data) {
 
