@@ -38,6 +38,12 @@ app = Flask(__name__)
 #################################################
 
 # First Route is the welcome screen
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 @app.route("/adhd")
 def adhd():
     return render_template("adhd.html")

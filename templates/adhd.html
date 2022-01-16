@@ -11,52 +11,22 @@
 
 <body>
 <!--NAVIGATOR-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Neuro Disorders Dashboard</a>
-    <button class="navbar-toggler" type="button" 
-    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-    aria-controls="navbarSupportedContent" aria-expanded="false" 
-    aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Menu
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="autism.html">Autism</a></li>
-            <li><a class="dropdown-item" href="idd.html">Intellectual Disability</a></li>
-            <li><a class="dropdown-item" href="aspergers.html">Aspergers</a></li>
-            <li><hr class="dropdown-divider"></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('index') }}"><h4>...BACK TO HOMEPAGE</h4></a>
+      <button class="navbar-toggler" type="button" 
+      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" 
+      aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>Neurological Disorders Dashboard</h1>
+        <h2>Neurological Disorders Dashboard</h2>
         <h3>Use the interactive charts below to explore the datasets</h3>
-        <br>
-        <br>
-        <p>The prevalence of neurological disorders has expanded over the 
-          years, including Attention Deficit and Hyperactivity Disorder (ADHD).  Not only can this have a debilitating effect 
-          on the individual, but this also affects the family members who are 
-          often providing the supports that are needed.  The purpose of this 
-          website is to use datasets available from Our World in Data that 
-          is available on Neurological Disorder statistics across the globe.</p>
-          <br>
-          <br>
           <a href="https://github.com/nladkins/project-3-neurological-disorders">GitHub Repository</a>
       </div>
     </div>

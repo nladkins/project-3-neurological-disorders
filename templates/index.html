@@ -1,0 +1,97 @@
+<!--Set up Navigation Bar.-->
+<!--Side Bar s.-->
+<!--Body and main Text.-->
+<!--Template of website.-->
+<!--Footer.-->
+<!--Duplicate the Template for other pages.-->
+
+<!--Nav Bar-->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head class="head">
+
+  <meta charset="UTF-8">
+  <title>Neurological Disorders</title>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+
+<body class="body">
+  <!--NAVIGATOR-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('index') }}"><h1>Neuro Disorders Dashboard</h1></a>
+      <button class="navbar-toggler" type="button" 
+      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" 
+      aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{{ url_for('autism') }}">Autism Data</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('idd') }}">Intellectual Disabilities Data</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('aspergers') }}">Aspergers Data</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('adhd') }}">ADHD Data</a></li>
+              <li><a class="dropdown-item" href="json">Raw Data</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://github.com/nladkins/project-3-neurological-disorders">GitHub Repository</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <!--CONTAINER-->
+  <div>
+    <!--Normally these medium columns go full wide on small screen sizes-->
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <br>
+        <br>
+        <center><h2 class=navy style="margin-left: 40px">
+          Neurological Disorders Website
+        </h2></center>
+          <br>
+          <br>
+          <h5 style="margin-left: 40px">
+            The prevalence of neurological disorders has expanded over the 
+            years, including Asperger's Syndrome, Autism, Intellectual Disability Disorder (IDD), and Attention Deficit and Hyperactivity Disorder (ADHD).  Not only can this have a debilitating effect 
+            on the individual, but this also affects the family members who are 
+            often providing the supports that are needed.  The purpose of this 
+            website is to use datasets available from Our World in Data that 
+            is available on Neurological Disorder statistics across the globe.
+          </h5>
+          <br>
+          <h5 style="margin-left: 40px">To navigate this site, please use the menu above in the Navigation Bar.</h5> 
+      </div>
+      <!--I intentionally did not change the colums adjusting because it 
+        messed up the images.  Therefore, I simply left this and made the 
+        other column shrink more than I would have otherwise done.-->
+    </div>
+  </div>
+
+  <script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+  crossorigin="anonymous">
+  </script>
+
+
+</body>
+
+</html>
